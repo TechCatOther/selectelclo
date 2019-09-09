@@ -61,7 +61,7 @@ def index():
     Output API version
     :return:
     """
-    return json.dumps({'version': 'v1.0'})
+    return jsonify({'version': 'v1.0'})
 
 
 @app.errorhandler(HTTPException)
