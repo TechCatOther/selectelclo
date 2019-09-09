@@ -1,6 +1,6 @@
 import logging
 import json
-from flask import Flask, abort, request, Response
+from flask import Flask, abort, request, Response, jsonify
 from werkzeug.exceptions import HTTPException
 from keystoneauth1.exceptions import HttpError as KeystoneHttpError
 
@@ -52,7 +52,7 @@ def action(service_name, service_action_name):
                 abort(500)
     else:
         abort(404)
-    return json.dumps(data)
+    return jsonify(data)
 
 
 @app.route('/')
